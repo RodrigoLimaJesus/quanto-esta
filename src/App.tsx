@@ -1,9 +1,12 @@
-import AppProvider from './contexts/providers/appProvider';
+import Header from './components/Header';
+import AppProvider from './contexts/providers/AppProvider';
 
 function App() {
   return (
     <AppProvider>
-      <h1>Setup Inicial</h1>
+      <div className="h-screen w-screen bg-slate-800 text-gray-200">
+        <Header />
+      </div>
     </AppProvider>
   );
 }
