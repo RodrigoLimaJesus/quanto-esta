@@ -1,5 +1,11 @@
+import AppProvider from './contexts/providers/appProvider';
+
 function App() {
-  return <h1>Hello world</h1>;
+  return (
+    <AppProvider>
+      <h1>Setup Inicial</h1>
+    </AppProvider>
+  );
 }
 
 export default App;
