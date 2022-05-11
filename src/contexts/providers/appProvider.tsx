@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ICurrency from '../../interfaces/currency';
 import IReactProps from '../../interfaces/reactProps';
+import { getAllCurrencies } from '../../services/handleCurrencies';
 import { AppContext } from '../appContext';
 
 export default function AppProvider({ children }: IReactProps) {
@@ -10,9 +10,9 @@ export default function AppProvider({ children }: IReactProps) {
 
   useEffect(() => {
     async function inititalFetchs() {
-      const { data } = await axios.get<ICurrency>('https://economia.awesomeapi.com.br/json/all');
+      const currencies = await getAllCurrencies();
 
-      setAllCurrencies(data);
+      setAllCurrencies(currencies);
       setIsMounted(true);
     }
 
