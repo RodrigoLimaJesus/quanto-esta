@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
-import ICurrency from '../../interfaces/currency';
+import { ICurrencyContent } from '../../interfaces/currency';
 import IReactProps from '../../interfaces/reactProps';
 import { getAllCurrencies } from '../../services/handleCurrencies';
 import { AppContext } from '../appContext';
 
 export default function AppProvider({ children }: IReactProps) {
-  const [allCurrencies, setAllCurrencies] = useState<ICurrency>();
+  const [allCurrencies, setAllCurrencies] = useState<ICurrencyContent[]>([]);
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
     async function inititalFetchs() {
       const currencies = await getAllCurrencies();
+      const currenciesValues = Object.values(currencies);
 
-      setAllCurrencies(currencies);
+      setAllCurrencies(currenciesValues);
       setIsMounted(true);
     }
 
@@ -21,9 +22,5 @@ export default function AppProvider({ children }: IReactProps) {
     }
   }, [isMounted]);
 
-  return isMounted ? (
-    <AppContext.Provider value={{ allCurrencies }}>{children}</AppContext.Provider>
-  ) : (
-    <h1>Loading...</h1>
-  );
+  return <AppContext.Provider value={{ allCurrencies, isMounted }}>{children}</AppContext.Provider>;
 }

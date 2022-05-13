@@ -1,4 +1,4 @@
-interface ICurrencyContent {
+export interface ICurrencyContent {
   code: string;
   codein: string;
   name: string;
