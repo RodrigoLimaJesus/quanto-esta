@@ -1,6 +1,6 @@
-import { ICurrencyContent } from './currency';
+import ICurrency from './currency';
 
 export default interface IContext {
-  allCurrencies?: ICurrencyContent[];
+  allCurrencies?: ICurrency[];
   isMounted?: boolean;
 }
