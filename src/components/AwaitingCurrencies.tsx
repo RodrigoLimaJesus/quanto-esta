@@ -13,6 +13,7 @@ export default function AwaitingCurrencies() {
             <div className="bg-slate-400 rounded h-5 w-14"></div>
             <div className="bg-slate-400 rounded h-5 w-14"></div>
             <div className="bg-slate-400 rounded h-5 w-14"></div>
+            <div className="bg-slate-400 rounded h-5 w-14"></div>
           </div>
         </CurrencyCard>
       ))}
