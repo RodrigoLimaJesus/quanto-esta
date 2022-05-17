@@ -5,5 +5,5 @@ import { useAppContext } from '../../contexts/appContext';
 export default function Home() {
   const { isMounted, allCurrencies } = useAppContext();
 
-  return isMounted && allCurrencies ? <CurrenciesList /> : <AwaitingCurrencies />;
+  return isMounted && allCurrencies ? <CurrenciesList currencies={allCurrencies} /> : <AwaitingCurrencies />;
 }

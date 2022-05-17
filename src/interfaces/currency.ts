@@ -3,4 +3,5 @@ export default interface ICurrency {
   codein: string;
   name: string;
   ask: string;
+  pctChange: string;
 }
