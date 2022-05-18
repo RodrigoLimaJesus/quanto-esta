@@ -35,7 +35,7 @@ export default function CurrenciesList({ currencies }: ICurrencyList) {
                 ) : (
                   <AiFillCaretDown className="text-red-500" />
                 )}
-                <span>{pctChange}</span>
+                <span>{pctChange}%</span>
               </div>
               <button
                 type="button"

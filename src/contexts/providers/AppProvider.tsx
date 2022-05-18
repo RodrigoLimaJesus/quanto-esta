@@ -10,11 +10,12 @@ export default function AppProvider({ children }: IReactProps) {
   const [favoriteCodes, setFavoriteCodes] = useState<ICurrencyFavorite[]>([]);
   const [favoriteCurrencies, setFavoriteCurrencies] = useState<ICurrency[]>([]);
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [appCurrency, setAppCurrency] = useState<string>('BRL');
   const storageFavoriteKey = 'favorites';
 
   useEffect(() => {
     async function inititalFetchs() {
-      const currencies = await getAllCurrencies();
+      const currencies = await getAllCurrencies(appCurrency);
       const favorites = localStorage.getItem(storageFavoriteKey);
 
       if (favorites) {
@@ -25,10 +26,18 @@ export default function AppProvider({ children }: IReactProps) {
       setIsMounted(true);
     }
 
+    async function currenciesFetch() {
+      const currencies = await getAllCurrencies(appCurrency);
+
+      setAllCurrencies(currencies);
+    }
+
     if (!isMounted) {
       inititalFetchs();
+    } else {
+      currenciesFetch();
     }
-  }, [isMounted]);
+  }, [isMounted, appCurrency]);
 
   useEffect(() => {
     async function favoriteFetchs() {
@@ -56,9 +65,21 @@ export default function AppProvider({ children }: IReactProps) {
     return;
   }
 
+  function handleAppCurrency(currency: string) {
+    setAppCurrency(currency);
+  }
+
   return (
     <AppContext.Provider
-      value={{ allCurrencies, handleFavorites, favoriteCurrencies, favoriteCodes, isMounted }}
+      value={{
+        allCurrencies,
+        handleFavorites,
+        appCurrency,
+        handleAppCurrency,
+        favoriteCurrencies,
+        favoriteCodes,
+        isMounted,
+      }}
     >
       {children}
     </AppContext.Provider>

@@ -2,13 +2,21 @@ import axios from 'axios';
 import ICurrency from '../interfaces/currency';
 import ICurrencyFavorite from '../interfaces/currencyFavorite';
 
-export async function getAllCurrencies(): Promise<ICurrency[]> {
-  const { data } = await axios.get<{ currency: ICurrency }>(
+export async function getAllCurrencies(appCurrency: string): Promise<ICurrency[]> {
+  const { data: allCurrencies } = await axios.get<{ currency: ICurrency }>(
     'https://economia.awesomeapi.com.br/json/all',
   );
-  const currencies = Object.values(data);
 
-  return currencies;
+  const currencieCodes = Object.keys(allCurrencies)
+    .filter((code) => code !== 'USDT' && code !== appCurrency)
+    .map((code) => `${code}-${appCurrency}`)
+    .join(',');
+
+  const { data } = await axios.get<{ currency: ICurrency }>(
+    `https://economia.awesomeapi.com.br/json/last/${currencieCodes}`,
+  );
+
+  return Object.values(data);
 }
 
 function formatCurrencyCodes(currInfos: ICurrencyFavorite[]): string {
@@ -33,7 +41,5 @@ export async function getFavorites(currInfos: ICurrencyFavorite[]): Promise<ICur
     `https://economia.awesomeapi.com.br/json/last/${currencyCodes}`,
   );
 
-  const currencies = Object.values(data);
-
-  return currencies;
+  return Object.values(data);
 }

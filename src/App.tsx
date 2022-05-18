@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import AppProvider from './contexts/providers/AppProvider';
 import Favorites from './pages/favorites';
 import Home from './pages/home';
+import Settings from './pages/settings';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>
     </AppProvider>
