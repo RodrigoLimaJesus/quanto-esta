@@ -10,7 +10,8 @@ import Settings from './pages/settings';
 function App() {
   return (
     <AppProvider>
-      <div className="h-screen w-screen overflow-y-auto bg-slate-800 text-gray-200 px-4">
+      <div className="app-container h-screen w-screen absolute -z-10"></div>
+      <div className="h-screen w-screen text-white overflow-y-auto px-4">
         <Header />
         <div
           className="flex flex-col

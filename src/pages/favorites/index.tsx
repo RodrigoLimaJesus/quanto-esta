@@ -12,7 +12,7 @@ export default function Favorites() {
       <div
         className="font-bold text-lg text-center
         flex items-center
-        my-2 mx-3 p-2
+        h-[65vh]
         mn:justify-center
         sm:w-96
         lg:w-[30rem]"

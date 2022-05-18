@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header
       className="font-bold
-        text-2xl
+        text-2xl text-white
         py-3
         flex flex-row items-center justify-center
         md:text-3xl

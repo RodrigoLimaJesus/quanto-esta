@@ -12,7 +12,13 @@ import CurrencyCard from './CurrencyCard';
 export default function CurrenciesList({ currencies }: ICurrencyList) {
   const { handleFavorites, favoriteCodes } = useAppContext();
   return (
-    <div className="scrollbar-thin h-[80vh] overflow-hidden overflow-y-auto md:text-lg">
+    <div
+      className="scrollbar-thin
+      h-[65vh]
+      overflow-hidden overflow-y-auto
+      sm:h-[73vh]
+      md:text-lg"
+    >
       {currencies?.map((currencie) => {
         const { name, codein, code, ask, pctChange } = currencie;
         const numberAsk = Number(ask).toFixed(2);

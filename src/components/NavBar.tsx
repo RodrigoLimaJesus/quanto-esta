@@ -18,7 +18,7 @@ export default function NavBar() {
       mn:justify-center
       sm:bg-slate-700
       sm:flex-col
-      sm:w-44 sm:h-[80vh]
+      sm:w-44 sm:h-[73vh]
       sm:justify-start
       sm:m-0"
     >

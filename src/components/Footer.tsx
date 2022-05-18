@@ -6,7 +6,12 @@ export default function Footer() {
     { icon: <AiFillLinkedin />, link: 'https://www.linkedin.com/in/rodrigo-lima-jesus/' },
   ];
   return (
-    <footer className="flex flex-row justify-center items-center my-4 text-xl lg:text-2xl">
+    <footer
+      className="flex flex-row justify-center items-center
+      my-4
+      text-xl text-white
+      lg:text-2xl"
+    >
       <span>&copy; 2022 - Rodrigo Lima</span>
       {myLinks.map(({ icon, link }) => (
         <a
