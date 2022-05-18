@@ -5,3 +5,21 @@
 * {
   box-sizing: border-box;
 }
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: rgb(168, 168, 168);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(51, 65, 85);
+}
