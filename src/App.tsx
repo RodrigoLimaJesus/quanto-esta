@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import AppProvider from './contexts/providers/AppProvider';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </AppProvider>
   );
