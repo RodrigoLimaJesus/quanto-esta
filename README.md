@@ -35,6 +35,6 @@ Abaixo é possível ver algumas das telas já feitas.
 
 - `npm install`
 
-4. Coloque o projeto para rodar
+4. Coloque o projeto para rodar.
 
 - `npm start`
