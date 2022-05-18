@@ -10,7 +10,18 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="flex flex-row my-3 py-2 overflow-x-auto">
+    <nav
+      className="flex flex-row
+      rounded
+      mb-4
+      overflow-x-auto
+      mn:justify-center
+      sm:bg-slate-700
+      sm:flex-col
+      sm:w-44 sm:h-[80vh]
+      sm:justify-start
+      sm:m-0"
+    >
       {routes.map(({ id, linkTo, name, icon }) => (
         <NavLink
           key={id}
@@ -18,7 +29,12 @@ export default function NavBar() {
           className={({ isActive }) => {
             const activeStyle = isActive ? 'text-orange-400' : 'text-gray-400';
 
-            return `flex flex-row text-xl items-center mx-2 ${activeStyle}`;
+            return `flex flex-row items-center
+              text-xl
+              mx-2
+              ${activeStyle}
+              
+              sm:my-2`;
           }}
         >
           <span className="mr-1">{icon}</span> {name}

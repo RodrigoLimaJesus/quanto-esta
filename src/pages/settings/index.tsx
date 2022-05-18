@@ -5,9 +5,9 @@ export default function Settings() {
   const exchangeCodes = ['BRL', 'USD', 'EUR'];
 
   return (
-    <div>
+    <div className="my-1 mx-3 p-2 sm:w-96 lg:w-[30rem]">
       <label htmlFor="exchange-codes" className="flex flex-row justify-center items-center">
-        Moeda de câmbio:
+        <span className="md:text-xl">Moeda de câmbio:</span>
         <select
           id="exchange-codes"
           className="form-select appearance-none

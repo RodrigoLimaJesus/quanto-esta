@@ -11,12 +11,17 @@ function App() {
     <AppProvider>
       <div className="h-screen w-screen overflow-y-auto bg-slate-800 text-gray-200 px-4">
         <Header />
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+        <div
+          className="flex flex-col
+          sm:flex-row sm:justify-center"
+        >
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </div>
       </div>
     </AppProvider>
   );

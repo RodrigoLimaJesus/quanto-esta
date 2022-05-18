@@ -12,7 +12,7 @@ import CurrencyCard from './CurrencyCard';
 export default function CurrenciesList({ currencies }: ICurrencyList) {
   const { handleFavorites, favoriteCodes } = useAppContext();
   return (
-    <>
+    <div className="h-[80vh] overflow-hidden overflow-y-auto md:text-lg">
       {currencies?.map((currencie) => {
         const { name, codein, code, ask, pctChange } = currencie;
         const numberAsk = Number(ask).toFixed(2);
@@ -21,7 +21,7 @@ export default function CurrenciesList({ currencies }: ICurrencyList) {
 
         return (
           <CurrencyCard key={name}>
-            <span className="text-xs mb-2">{name}</span>
+            <span className="text-xs mb-2 lg:text-sm">{name}</span>
             <div className="w-full flex flex-row justify-between">
               <div className="flex flex-row items-center text-sm">
                 <span>{code}</span>
@@ -51,6 +51,6 @@ export default function CurrenciesList({ currencies }: ICurrencyList) {
           </CurrencyCard>
         );
       })}
-    </>
+    </div>
   );
 }
