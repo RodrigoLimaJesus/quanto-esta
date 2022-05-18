@@ -6,30 +6,22 @@ O projeto foi feito em React Js + Typescript, para o gerenciamento de estados gl
 
 Abaixo é possível ver algumas das telas já feitas.
 
-#
+# Página Inicial
 
-## Página Inicial
+<img src="./src/images/home.png" alt="Page home" width="60%"/>
 
-<img src="./src/images/home.png" alt="Page home" width="55%"/>
-
-#
-
-## Página de favoritos
+# Página de favoritos
 
 <img src="./src/images/favorites.png" alt="Page favorites" width="45%"/>
 <img src="./src/images/favorites-empty.png" alt="Page favorites without items" width="45%"/>
 
-#
+# Página de configurações
 
-## Página de configurações
-
-<img src="./src/images/settings.png" alt="Page settings" width="55%"/>
+<img src="./src/images/settings.png" alt="Page settings" width="60%"/>
 
 ### Feedbacks são muito bem vindos, sem eles tenho certeza que eu não conseguiria ter me desenvolvido até aqui, fiquem a vontade para contribuir!!
 
-#
-
-## Caso queira testar o projeto na sua máquina
+# Caso queira testar o projeto na sua máquina
 
 1. Clone o projeto para sua máquina.
 
